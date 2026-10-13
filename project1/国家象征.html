@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>国家象征</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+<style>
+    /* 原有列表样式 */
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    ul li a {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.5;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        color: #ffffff;
+    }
+    ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    /* 页面背景图 */
+    body {
+        background-image: url('images/背景.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    /* 半透明遮罩，让背景变暗，降低饱和度 */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.65);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+ /* 卡片背景 */
+    #header .inner {
+        background-color: rgba(27, 31, 34, 0.85) !important;
+        border-radius: 4px !important;
+        padding: 2rem !important;
+        box-shadow: 0 0 2rem rgba(0,0,0,0.2);
+        /* 下面是新增的居中留白代码 */
+        max-width: 850px !important;  /* 限制最大宽度 */
+        margin: 0 auto !important;    /* 让卡片水平居中 */
+        width: 90% !important;        /* 小屏幕时两边自动留出 5% 的边距 */
+    }
+
+    /* ===== 新增：列表分成两列 ===== */
+    #header .inner ul {
+        column-count: 2;
+        column-gap: 2rem;
+    }
+    #header .inner ul li {
+        break-inside: avoid;      /* 避免单个项目被分断 */
+        page-break-inside: avoid;
+    }
+
+    /* 响应式：屏幕较窄时变为一列 */
+    @media (max-width: 600px) {
+        #header .inner ul {
+            column-count: 1;
+        }
+    }
+</style>
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div class="content">
+                <div class="inner">
+                    <h1>国家象征与格言 / Symboles et devise</h1>
+                    <p>Le drapeau français est bleu, blanc, rouge. Il est né de la Révolution française.
+法国国旗为蓝、白、红三色，诞生于法国大革命。</p>
+
+                   <p>La devise de la République est « Liberté, Égalité, Fraternité ».
+共和国格言是“自由、平等、博爱”。</p>
+
+                  <p>La Marseillaise est l'hymne national. Le 14 juillet est la fête nationale.
+《马赛曲》是国歌。7 月 14 日是法国国庆节。</p>
+                    <p><a href="index.html#intro">← 返回上一页</a></p>
+                </div>
+            </div>
+        </header>
+        <div id="main">
+
+        </div>
+        <footer id="footer">
+            <p class="copyright">&copy; For Charlie. Design: <a href="https://html5up.net">HTML5 UP</a></p>
+        </footer>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

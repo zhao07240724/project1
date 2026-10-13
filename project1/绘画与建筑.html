@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>绘画与建筑</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+<style>
+    /* 原有列表样式 */
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    ul li a {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.5;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        color: #ffffff;
+    }
+    ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    /* 页面背景图 */
+    body {
+        background-image: url('images/背景.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    /* 半透明遮罩，让背景变暗，降低饱和度 */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.65);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+ /* 卡片背景 */
+    #header .inner {
+        background-color: rgba(27, 31, 34, 0.85) !important;
+        border-radius: 4px !important;
+        padding: 2rem !important;
+        box-shadow: 0 0 2rem rgba(0,0,0,0.2);
+        /* 下面是新增的居中留白代码 */
+        max-width: 850px !important;  /* 限制最大宽度 */
+        margin: 0 auto !important;    /* 让卡片水平居中 */
+        width: 90% !important;        /* 小屏幕时两边自动留出 5% 的边距 */
+    }
+
+    /* ===== 新增：列表分成两列 ===== */
+    #header .inner ul {
+        column-count: 2;
+        column-gap: 2rem;
+    }
+    #header .inner ul li {
+        break-inside: avoid;      /* 避免单个项目被分断 */
+        page-break-inside: avoid;
+    }
+
+    /* 响应式：屏幕较窄时变为一列 */
+    @media (max-width: 600px) {
+        #header .inner ul {
+            column-count: 1;
+        }
+    }
+</style>
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div class="content">
+                <div class="inner">
+                    <h1>绘画与建筑 / Peinture et architecture</h1>
+                    <p>La France a joué un rôle majeur dans l'histoire de l'art. L'impressionnisme est né en France au XIXe siècle, avec Monet, Renoir, Degas et Cézanne.
+法国在艺术史上扮演了重要角色。19 世纪，印象派在法国诞生，代表人物有莫奈、雷诺阿、德加和塞尚。</p>
+
+                   <p>L'architecture française va des cathédrales gothiques aux châteaux de la Loire, du classicisme de Versailles aux projets contemporains.
+法国建筑从哥特式大教堂到卢瓦尔河城堡，从凡尔赛的古典主义到当代项目，跨度极大。</p>
+
+                  <p>Notre-Dame de Paris, le Louvre, le château de Versailles et la tour Eiffel sont des repères célèbres.
+巴黎圣母院、卢浮宫、凡尔赛宫和埃菲尔铁塔都是著名地标。</p>
+                    <p><a href="index.html#work">← 返回上一页</a></p>
+                </div>
+            </div>
+        </header>
+        <div id="main">
+
+        </div>
+        <footer id="footer">
+            <p class="copyright">&copy; For Charlie. Design: <a href="https://html5up.net">HTML5 UP</a></p>
+        </footer>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
